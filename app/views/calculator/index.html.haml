@@ -3,13 +3,14 @@
   %p Enter a problem below, such as I + I
 
   = form_tag(:index, method: :get, class: 'form-inline') do
-    = text_field_tag(:problem)
+    = text_field_tag(:problem, 'I + I')
     = submit_tag('Solve!', class: 'btn btn-info')
 
 .row-fluid
   .span6
-    = image_tag 'roman.png'
-  .span6
+    = image_tag 'roman.png', class: 'roman'
+  .span3
     - if @solution
-      %h1
-        = "#{@problem} is #{@solution}"
+      #bubble
+        %h3
+          = "#{@problem} is #{@solution}"

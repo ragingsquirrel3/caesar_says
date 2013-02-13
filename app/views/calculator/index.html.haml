@@ -1,0 +1,15 @@
+.row-fluid
+  %h1 Roman Numeral Calculator
+  %p Enter a problem below, such as I + I
+
+  = form_tag(:index, method: :get, class: 'form-inline') do
+    = text_field_tag(:problem)
+    = submit_tag('Solve!', class: 'btn btn-info')
+
+.row-fluid
+  .span6
+    = image_tag 'roman.png'
+  .span6
+    - if @solution
+      %h1
+        = "#{@problem} is #{@solution}"

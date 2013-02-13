@@ -1,16 +1,27 @@
 .row-fluid
-  %h1 Roman Numeral Calculator
-  %p Enter a problem below, such as I + I
+  .span1
+  .span10.hero-unit
+    %h2 Caesar Says: Roman Numeral Calculator
+    %p Enter a problem below, such as I + I
+    
+    = form_tag("#", remote: true, class: 'form-inline', id: "calculator-form") do
+      = text_field_tag(:problem, 'I + I') 
+      = submit_tag('Solve!', class: 'btn btn-info')
 
-  = form_tag(:index, method: :get, class: 'form-inline') do
-    = text_field_tag(:problem, 'I + I')
-    = submit_tag('Solve!', class: 'btn btn-info')
+    %b Solution Language
+    %label.radio
+      = radio_button_tag(:in_arabic, false, checked: true)
+      Roman
+    %label.radio 
+      = radio_button_tag(:in_arabic, true)
+      Arabic
 
 .row-fluid
+  .span1
+  .span3
+    #bubble
+      %h3#solution
+        - if @solution
+          = "#{@problem} is #{@solution}"
   .span6
     = image_tag 'roman.png', class: 'roman'
-  .span3
-    - if @solution
-      #bubble
-        %h3
-          = "#{@problem} is #{@solution}"

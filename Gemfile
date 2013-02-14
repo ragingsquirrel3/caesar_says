@@ -26,3 +26,6 @@ gem 'jquery-rails'
 # some basic Rails spice
 gem 'twitter-bootstrap-rails'
 gem 'haml-rails'
+
+# le gem
+gem 'roman_numeral_evaluator'

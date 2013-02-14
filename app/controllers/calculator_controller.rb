@@ -1,5 +1,3 @@
-require './lib/assets/roman_numeral_evaluator'
-
 class CalculatorController < ApplicationController
   def index
   end

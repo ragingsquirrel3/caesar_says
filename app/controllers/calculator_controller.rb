@@ -9,11 +9,10 @@ class CalculatorController < ApplicationController
     puts "IN ARABC IS BELOW"
     puts params[:in_arabic]
     sleep 1
-    evaluator = RomanNumeralEvaluator.new
     @problem = params[:problem]
     
     # solution is arabic when in_arabic is true
-    @solution = params[:in_arabic] == 'true' ? evaluator.solve_as_integer(params[:problem]).to_s : evaluator.solve(params[:problem]).to_s
+    @solution = params[:in_arabic] == 'true' ? RomanNumeralEvaluator.solve_as_integer(params[:problem]).to_s : RomanNumeralEvaluator.solve(params[:problem]).to_s
     
     render json: { problem: @problem, solution: @solution }
   end

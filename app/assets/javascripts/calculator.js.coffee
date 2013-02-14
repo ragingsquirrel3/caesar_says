@@ -27,7 +27,7 @@ $("#calculator-form").submit( ->
       
     error    : ->
       solution_text.text("Sorry, can't do that one.")
-       d
+    
     complete : -> 
       # remove bubble animation
       bubble.removeClass('thinking')

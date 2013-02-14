@@ -7,19 +7,19 @@
 }
 
 #bubble {
-  width: 300px;
   height: 250px;
-  background-image: url(/assets/speech_bubble.png);
+  background-image: url(/assets/bubble_sprite.png);
+  background-position-y: -250px;
   background-repeat: no-repeat;
   background-size: 100%;
   
   
   /*thinking animation*/
   &.thinking {
-    background-image: url(/assets/thought_bubble.png);
+    background-position-y: 0px;
   }
   
-  h3 {
+  h1, h2, h3, h4, h5, p {
     padding: 25px;
   }
 }

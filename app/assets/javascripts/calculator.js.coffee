@@ -15,6 +15,7 @@ $("#calculator-form").submit( ->
     data :
       problem : input_form.value
       in_arabic: $("#in_arabic_true").is(':checked')
+      
     success: (data, textStatus, jqXHR) ->
       # write_solution, plus random whitty expression
       solution_text.text("#{input_form.value} is #{data['solution']}")
@@ -23,8 +24,10 @@ $("#calculator-form").submit( ->
         'Try mixing Roman and Arabic numerals (like 10 * V).'
       ]
       whit.text(whitty_expressions[Math.round(Math.random() * whitty_expressions.length) - 1])
+      
     error    : ->
       solution_text.text("Sorry, can't do that one.")
+       d
     complete : -> 
       # remove bubble animation
       bubble.removeClass('thinking')

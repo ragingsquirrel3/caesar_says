@@ -6,7 +6,7 @@
     
     = form_tag("#", remote: true, class: 'form-inline', id: "calculator-form") do
       = text_field_tag(:problem, 'I + I') 
-      = submit_tag('Solve!', class: 'btn btn-info')
+      = submit_tag('Solve!', class: 'btn btn-info', id: 'solve-button')
 
     %b Solution Language
     %label.radio

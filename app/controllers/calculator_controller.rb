@@ -6,9 +6,7 @@ class CalculatorController < ApplicationController
   
   # json endpoint for remote calculation
   def calculate
-    puts "IN ARABC IS BELOW"
-    puts params[:in_arabic]
-    sleep 1
+    sleep 1 # show animation
     @problem = params[:problem]
     
     # solution is arabic when in_arabic is true
